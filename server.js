@@ -1,3 +1,6 @@
+const dns = require("node:dns");
+dns.setServers(["8.8.8.8", "1.1.1.1"])
+
 const dotenv = require("dotenv");
 dotenv.config();
 const express = require("express");
@@ -10,6 +13,7 @@ const session = require('express-session')
 const { MongoStore } = require('connect-mongo')
 
 const authCtrl = require('./controllers/auth')
+const tripsCtrl = require('./controllers/trips')
 
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : "3000";
@@ -56,6 +60,16 @@ app.get('/dashboard', async (req, res) => {
         user: req.session.user
     })
 })
+app.get('/trips', async (req, res) => {
+    if (!req.session.user){
+        return res.redirect('/auth/sign-in')
+    }
+    res.render('trips.ejs', {
+        user: req.session.user
+    })
+})
+
+
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
