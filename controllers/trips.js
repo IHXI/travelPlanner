@@ -54,7 +54,6 @@ const create = async(req, res) =>{
 
 const index = async(req, res) =>{
     let allTrips= await Trip.find().populate('owner')
-
     res.render('trips/index.ejs', {
         allTrips
     })

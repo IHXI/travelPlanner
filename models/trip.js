@@ -27,7 +27,13 @@ const tripSchema = new mongoose.Schema({
             required: true,
         },
     },
-
+    from:{
+        type: Date,
+    },
+    to:{
+        type: Date,
+    },
+    
     country: {
         type: String,
         required: true,

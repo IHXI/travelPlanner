@@ -10,6 +10,16 @@
     <h1>trip</h1>
     <a href="/trips/new">+ New Trip</a>
     
+    <%allTrips.forEach((item)=>{%>
+        <ul>
+            <li>
+                <a href="/trips/<%=item._id%>">
+                <%=item.country%></a>
+                <img src="<%=item.image.url%>" alt="" width="100">
+            </li>
+        </ul>
+    
+    <%})%>
 
     
 </body>
