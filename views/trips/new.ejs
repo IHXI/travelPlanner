@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create Trip</h1>
+    <form action="/trips" method="POST" enctype="multipart/form-data">
+        country:
+        <input type="text" name="country" id="">
+        city:
+        <input type="text" name="city">
+        Date:
+
+        budget:
+        <input type="number" name="budget" min="0">
+        image:
+        <input type="file" name="image" min="0" accept="image/jpeg,image/png,image/webp,image/jpg">
+        <button type="submit">Add Trip</button>
+    </form>
+</body>
+</html>

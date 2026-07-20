@@ -19,7 +19,7 @@ const tripSchema = new mongoose.Schema({
     },
     image: {
         url:{
-            type: Number,
+            type: String,
             required: true,
         },
         publicId:{
@@ -31,11 +31,13 @@ const tripSchema = new mongoose.Schema({
     country: {
         type: String,
         required: true,
+        trim: true,
     },
 
     city:{
         type: String,
         required: true,
+        trim: true,
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
