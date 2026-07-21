@@ -7,16 +7,35 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>trip</h1>
+
+
+    <h1>Trip to <%=trip.city%>, <%=trip.country%></h1>
+    <h2>Budget: <%=trip.budget%></h2>
+    <h3>From <%=trip.from.toISOString().split("T")[0]%> to <%=trip.to.toISOString().split("T")[0]%></h3>
+    <h4>status: <%=trip.status%></h4>
+
+    <section>
+        <h2>Notes</h2>
+        <form action="/trips/<%=trip._id%>/notes" method="POST">
+            <textarea name="text" rows="4" required></textarea>
+            <button type="submit">Add a note</button>
+        </form>
+        <%trip.notes.forEach((item) => {%>
+            <p><%=item.author.username%>: <%=item.text%></p><input type="checkbox">
+        <%})%>
+    </section>
+
+    <form action="/trips">
+        <button type="submit">delete</button>
+    </form>
+
+    <form action="/trips/<%=trip._id%>/edit">
+        <button type="submit">Edit</button>
+    </form>
     
-    <ul>
-    <a href="/trips/new">+ New Trip
-    <li>
-        <img src="<%=item.image.url%>" alt="" width="200px">
-            A listing in <%=item.city%> owned by <%=item.owner.username%>
-            </li>
-        </a>
-   </ul>
+        
+       
+ 
     
 </body>
 </html>

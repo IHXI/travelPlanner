@@ -33,7 +33,9 @@ const tripSchema = new mongoose.Schema({
     to:{
         type: Date,
     },
-    
+    status:{
+        type: String,
+    },
     country: {
         type: String,
         required: true,

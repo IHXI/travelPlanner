@@ -81,6 +81,11 @@ app.get('/trips/new', isSignedIn, tripsCtrl.showNewForm)
 app.post('/trips', isSignedIn, upload.single('image'), tripsCtrl.create)
 app.get('/trips', tripsCtrl.index)
 
+app.get('/trips/:tripId', tripsCtrl.show)
+
+app.get('/trips/:tripId/edit', tripsCtrl.editTrip)
+app.put('/trips/:tripId', isSignedIn,upload.single('image'), tripsCtrl.updateTrip)
+
 
 
 
