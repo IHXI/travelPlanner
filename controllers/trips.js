@@ -72,8 +72,12 @@ const index = async(req, res) =>{
 
 const show = async(req, res) =>{
     const trip = await Trip.findById(req.params.tripId).populate('owner').populate('notes.author')
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${trip.city},${trip.country}&appid=${process.env.WEATHER_API_KEY}&units=metric`)
+    const weather = await response.json()
+    console.log(weather)
     res.render('trips/show.ejs', {
-        trip
+        trip,
+        weather
     })
 }
 const editTrip = async (req, res) => {

@@ -1,12 +1,13 @@
 <%- include('../partials/nav') %>
 
     <h1>Trip to <%=trip.city%>, <%=trip.country%></h1>
-    <h2>Budget: <%=trip.budget%></h2>
-   
-        <h3>From:  <%if(trip.form){%><%=trip.from.toISOString().split("T")[0]%><%}%></h3> 
-        <h3>to: <%if(trip.form){%><%=trip.to.toISOString().split("T")[0]%><%}%></h3>
-   
-    <h4>status: <%=trip.status%></h4>
+    <h2>Current weather of <%=trip.city%>, <%=trip.country%>: <%=weather.main.temp%>°C</h2>
+    <h2>feels like: <%=weather.main.feels_like%>°C</h2>
+    <h3>From:  <%if(trip.form){%><%=trip.from.toISOString().split("T")[0]%><%}%></h3> 
+    <h3>to: <%if(trip.form){%><%=trip.to.toISOString().split("T")[0]%><%}%></h3>
+    <h3>Budget: <%=trip.budget%></h3>
+    <h3>status: <%=trip.status%></h3>
+    
 
     <section>
         <h2>Notes</h2>
