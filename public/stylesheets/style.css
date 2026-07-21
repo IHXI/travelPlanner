@@ -1,0 +1,9 @@
+body{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    min-width: 100dvh;
+    align-items: center;
+    flex-wrap: wrap;
+
+}

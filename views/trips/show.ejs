@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
+<%- include('../partials/nav') %>
 
     <h1>Trip to <%=trip.city%>, <%=trip.country%></h1>
     <h2>Budget: <%=trip.budget%></h2>
-    <h3>From <%=trip.from.toISOString().split("T")[0]%> to <%=trip.to.toISOString().split("T")[0]%></h3>
+   
+        <h3>From:  <%if(trip.form){%><%=trip.from.toISOString().split("T")[0]%><%}%></h3> 
+        <h3>to: <%if(trip.form){%><%=trip.to.toISOString().split("T")[0]%><%}%></h3>
+   
     <h4>status: <%=trip.status%></h4>
 
     <section>
@@ -25,7 +19,7 @@
         <%})%>
     </section>
 
-    <form action="/trips">
+    <form action="/trips/<%=trip._id%>?_method=DELETE" method="POST">
         <button type="submit">delete</button>
     </form>
 

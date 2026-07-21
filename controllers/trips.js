@@ -131,6 +131,18 @@ const updateTrip = async (req, res) => {
   }
 }
 
+const deleteTrip = async(req, res) =>{
+    const trip = await Trip.findById(req.params.tripId).populate('owner')
+
+    if (trip.owner.equals(req.session.user._id)){
+        await Trip.findByIdAndDelete(req.params.tripId)
+        res.redirect('/Trips')
+    }else{
+        res.render('error.ejs',{
+            msg: "you don't have permission to do that"
+        }) 
+    } 
+}
 
 
 module.exports = { 
@@ -140,4 +152,5 @@ module.exports = {
     show,
     editTrip,
     updateTrip,
+    deleteTrip
 }

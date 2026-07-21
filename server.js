@@ -12,6 +12,7 @@ const morgan = require("morgan");
 const session = require('express-session')
 const { MongoStore } = require('connect-mongo')
 const upload = require('./config/multer')
+const path = require('path')
 
 const isSignedIn = require('./middleware/is-signed-in')
 const passUserToView = require('./middleware/pass-user-to-view')
@@ -38,7 +39,9 @@ mongoose.connection.on("connected", () => {
 app.use(express.urlencoded({ extended: false }));
 // Middleware for using HTTP verbs such as PUT or DELETE
 app.use(methodOverride("_method"));
+app.use(express.static(path.join(__dirname, "public")))
 app.use(express.static('public'))
+
 
 // Morgan for logging HTTP requests
 app.use(morgan('dev'));
@@ -85,6 +88,7 @@ app.get('/trips/:tripId', tripsCtrl.show)
 
 app.get('/trips/:tripId/edit', tripsCtrl.editTrip)
 app.put('/trips/:tripId', isSignedIn,upload.single('image'), tripsCtrl.updateTrip)
+app.delete('/trips/:tripId', isSignedIn, upload.single('image'), tripsCtrl.deleteTrip)
 
 
 
