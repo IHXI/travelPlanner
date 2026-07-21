@@ -35,7 +35,6 @@ const create = async(req, res) =>{
         })
     }
         */
-    const uploadedImage = await uploadImage(req.file.buffer)
 
     const tripData = {}
     tripData.budget = req.body.budget
@@ -46,10 +45,19 @@ const create = async(req, res) =>{
     tripData.status = req.body.status
     tripData.owner = req.session.user._id
 
-    tripData.image = {
+    if (req.file) {
+    const uploadedImage = await uploadImage(req.file.buffer)
+        tripData.image = {
         url: uploadedImage.secure_url,
         publicId: uploadedImage.public_id
     }
+    } else {
+        tripData.image = {
+        url: '/images/planeinsky.webp',
+        publicId: 'Travel-Planner/default-trip'
+    }}
+    
+    
 
     let createdTrip = await Trip.create(tripData)
     res.redirect('/trips')
