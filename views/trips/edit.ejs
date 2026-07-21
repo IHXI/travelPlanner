@@ -3,19 +3,19 @@
     <h1>Edit Trip</h1>
     <form action="/trips/<%=trip._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
         country:
-        <input type="text" name="country" id="">
+        <input type="text" name="country" value="<%=trip.country%>">
         city:
-        <input type="text" name="city">
+        <input type="text" name="city" value="<%=trip.city%>">
         from:
-        <input type="Date" name="from" id="">
+        <input type="Date" name="from" value="<%=trip.from%>">
         to:
-        <input type="Date" name="to">
+        <input type="Date" name="to" value="<%=trip.to%>">
         budget:
-        <input type="number" name="budget" min="0">
+        <input type="number" name="budget" min="0" value="<%=trip.budget%>">
         status:
-        <input type="text" name="status">
+        <input type="text" name="status" value="<%=trip.status%>">
         image:
-        <input type="file" name="image" min="0" accept="image/jpeg,image/png,image/webp,image/jpg">
+        <input type="file" name="image" min="0" accept="image/jpeg,image/png,image/webp,image/jpg" value="<%=trip.image%>">
         <button type="submit">Add Trip</button>
     </form>
 
