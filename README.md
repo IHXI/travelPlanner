@@ -58,3 +58,8 @@ http://localhost:3000
 - Currency converter
 - Dark mode
 - Search and filter trips
+
+## Resources Used
+
+- OpenWeather API – Current weather information.
+- GeeksforGeeks JavaScript Currency Converter tutorial – Used as the basis for implementing the currency converter feature and adapted to fit this application's workflow. :contentReference[oaicite:0]{index=0}
