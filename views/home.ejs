@@ -11,16 +11,31 @@
 </body>
 </html>
 
+<h1>Welcome to the travel planner app</h1>
+
     <% if (user) { %>
-        <h1>Welcome to the travel planner app <%= user.username %></h1>
+        <div id="dashboard-buttons">
+        <form action="/dashboard">
+            <button type="submit">Go to dashboard</button>
+        </form>
+        <form action="/trips">
+            <button type="submit">View trips</button>
+        </form>
+        </div>
         <form action="/auth/sign-out?_method=DELETE" method="POST">
             <button type="submit">Sign Out</button>
         </form>
-        <a href="/dashboard">View dashboard</a>
-        <a href="/trips">View trips</a>
+
+  
     <% } else { %>
-        <a href="/auth/sign-up">Sign Up</a>
-        <a href="/auth/sign-in">Sign In</a>
+        <div id="dashboard-buttons">
+        <form action="/auth/sign-up">
+            <button type="submit">Sign Up</button>
+        </form>
+        <form action="/auth/sign-in">
+            <button type="submit">Sign In</button>
+        </form>
+    </div>
     <% } %>
 
     

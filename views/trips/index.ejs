@@ -1,6 +1,13 @@
 <%- include('../partials/nav') %>
+    <%if(!allTrips){%>
+    <h1>Be the first to add a trip!</h1>
+    <form action="/trips/new">
+        <button>+ New Trip</button>
+    </form>
+    <%}%>
 
-    <h1>trip</h1>
+    
+    <h1>trips</h1>
     <form action="/trips/new">
         <button>+ New Trip</button>
     </form>
@@ -17,6 +24,6 @@
     
     <%})%>
 </div>
-    
+   
 </body>
 </html>

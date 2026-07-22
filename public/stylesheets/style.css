@@ -190,3 +190,10 @@ li a{
     color: #DD2D4A;
     font-weight: bold;
 }
+
+#dashboard-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
