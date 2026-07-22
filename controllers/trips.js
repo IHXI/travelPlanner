@@ -80,6 +80,7 @@ const show = async(req, res) =>{
         weather
     })
 }
+
 const editTrip = async (req, res) => {
     const trip = await Trip.findById(req.params.tripId).populate('owner').populate('notes.author')
     res.render('trips/edit.ejs', {
