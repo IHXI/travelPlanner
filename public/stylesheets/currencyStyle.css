@@ -7,17 +7,26 @@ body, h1, h2, p {
 /* Body and text styling */
 body {
     font-family: 'Amiri', serif;
-    background-color: #f8f9fa;
+    background-color: #f8cbda;
     color: #333;
 }
 
+hr{
+    border: 1px solid #880D1E;
+    margin: 0px 20px;
+}
 /* Heading styling */
 .heading {
     margin: 20px 0;
     font-family: 'Lobster', cursive;
     color: #007bff;
+    text-shadow: 3px 1px 1px white ;
 }
 
+button{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 /* Container styling */
 .container {
     margin-top: 30px;

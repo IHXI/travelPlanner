@@ -1,6 +1,6 @@
 body{
     margin:0;
-    background:#daeff2;
+    background:#CBEEF3;
     font-family:Arial, Helvetica, sans-serif;
     color:#2c2c2c;
 }
@@ -20,7 +20,7 @@ body{
 
 
 .nav-link{
-    color:white ;
+    color:white !important;
     font-weight:500;
     margin-right:10px;
     transition:.3s;
