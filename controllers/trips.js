@@ -157,6 +157,12 @@ const deleteTrip = async(req, res) =>{
     } 
 }
 
+const currencyConverter = async(req, res) => {
+    const trip = await Trip.findById(req.params.tripId).populate('owner').populate('notes.author')
+    res.render('trips/currencyExchange.ejs', {
+        trip
+    })
+}
 
 module.exports = { 
     showNewForm,
@@ -165,5 +171,6 @@ module.exports = {
     show,
     editTrip,
     updateTrip,
-    deleteTrip
+    deleteTrip,
+    currencyConverter
 }

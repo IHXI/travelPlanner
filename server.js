@@ -89,9 +89,7 @@ app.get('/trips/:tripId', tripsCtrl.show)
 app.get('/trips/:tripId/edit', tripsCtrl.editTrip)
 app.put('/trips/:tripId', isSignedIn,upload.single('image'), tripsCtrl.updateTrip)
 app.delete('/trips/:tripId', isSignedIn, upload.single('image'), tripsCtrl.deleteTrip)
-app.get('/trips/:tripId/currency', isSignedIn, async(req, res)=>{
-    res.render('trips/currencyExchange.ejs')
-})
+app.get('/trips/:tripId/currency', isSignedIn, tripsCtrl.currencyConverter)
 
 
 
