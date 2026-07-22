@@ -3,7 +3,8 @@
 Travel Planner is a web application that helps users organize and manage their trips in one place. Users can create an account, plan upcoming trips, add notes, and keep track of their travel plans.
 
 ### Travel Planner
-(/public/images/travelPlanner.png)
+<img width="942" height="856" alt="Screenshot 2026-07-23 020836" src="https://github.com/user-attachments/assets/65124a76-c060-4b3e-a6eb-0b0060cdfd60" />
+
 
 ----
 ## Live Demo
@@ -59,7 +60,8 @@ http://localhost:3000
 - Dark mode
 - Search and filter trips
 
+---
 ## Resources Used
 
 - OpenWeather API – Current weather information.
-- GeeksforGeeks JavaScript Currency Converter tutorial – Used as the basis for implementing the currency converter feature and adapted to fit this application's workflow. :contentReference[oaicite:0]{index=0}
+- GeeksforGeeks JavaScript Currency Converter tutorial – Used as the basis for implementing the currency converter feature and adapted to fit this application's workflow.
