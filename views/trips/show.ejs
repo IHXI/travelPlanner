@@ -7,7 +7,10 @@
     <h3>to: <%if(trip.form){%><%=trip.to.toISOString().split("T")[0]%><%}%></h3>
     <h3>Budget: <%=trip.budget%></h3>
     <h3>status: <%=trip.status%></h3>
-    
+    <form action="/trips/<%=trip._id%>/currency">
+        <p>Need to check the exchange rate before adding a note?</p>
+        <button type="submit">Open Currency Converter</button>
+    </form>
 
     <section>
         <h2>Notes</h2>
