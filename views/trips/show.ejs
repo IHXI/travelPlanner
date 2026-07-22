@@ -1,12 +1,13 @@
 <%- include('../partials/nav') %>
-    <div class="trip-info">
     <h1>Trip to <%=trip.city%>, <%=trip.country%></h1>
-    <h2>Current weather of <%=trip.city%>, <%=trip.country%>: <%=Math.ceil(weather.main.temp)%>°C</h2>
-    <h2>feels like: <%=Math.ceil(weather.main.feels_like)%>°C</h2>
-    <h3>From:  <%if(trip.form){%><%=trip.from.toISOString().split("T")[0]%><%}%></h3> 
-    <h3>to: <%if(trip.form){%><%=trip.to.toISOString().split("T")[0]%><%}%></h3>
-    <h3>Budget: <%=trip.budget%></h3>
-    <h3>status: <%=trip.status%></h3>
+
+    <div class="trip-info">
+    <h3>Current weather of <%=trip.city%>: <%=Math.ceil(weather.main.temp)%>°C</h2>
+    <h3>feels like: <%=Math.ceil(weather.main.feels_like)%>°C</h2>
+    <h4>From:  <%if(trip.form){%><%=trip.from.toISOString().split("T")[0]%><%}%></h3> 
+    <h4>to: <%if(trip.form){%><%=trip.to.toISOString().split("T")[0]%><%}%></h3>
+    <h4>Budget: <%=trip.budget%></h3>
+    <h4>status: <%=trip.status%></h3>
     </div>
     <form action="/trips/<%=trip._id%>/currency">
         <p>Need to check the exchange rate before adding a note?</p>
@@ -27,17 +28,17 @@
             </div> 
         <%})%>
     </section>
-
+    <%if (trip.owner.equals(user._id)){%>
     <section class="buttons">
     <form action="/trips/<%=trip._id%>?_method=DELETE" method="POST">
         <button type="submit">delete</button>
     </form>
-
+    
     <form action="/trips/<%=trip._id%>/edit">
         <button type="submit">Edit</button>
     </form>
     </section> 
-       
+     <%}%>  
  
     
 </body>

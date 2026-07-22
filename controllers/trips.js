@@ -145,7 +145,11 @@ const updateTrip = async (req, res) => {
 
 const deleteTrip = async(req, res) =>{
     const trip = await Trip.findById(req.params.tripId).populate('owner')
-
+    const user = req.session.user._id
+    res.render({
+      trip,
+      user
+    })
     if (trip.owner.equals(req.session.user._id)){
         await Trip.findByIdAndDelete(req.params.tripId)
         res.redirect('/Trips')
