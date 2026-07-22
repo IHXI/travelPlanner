@@ -18,6 +18,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
     <!-- linking style.css file-->
     <link rel="stylesheet" href="/stylesheets/currencyStyle.css">
+     <script src="/js/script.js" defer></script>
+    
 </head>
 
 <body>
@@ -183,17 +185,15 @@
                 <span class="finalValue" style="color:green;">
                 </span>
             </h2>
-             <form action="/trips/<%=trip._id%>">
+             
+            <form action="/trips/<%=trip._id%>">
                 <button type="submit">Back to Trip</button>
             </form>
-        </div>
+        </div> 
     </div>
 
-    
-
     <!-- linking script.js file -->
-    <script src="script.js"></script>
-    
+   
 </body>
 
 </html>

@@ -1,5 +1,7 @@
 // Include api for currency change
-const api = `https://v6.exchangerate-api.com/v6/${process.env.CURRENCY_EXCHANGE_API_KEY}/latest/USD`;
+console.log('hi')
+
+const api = `https://v6.exchangerate-api.com/v6/6ffe9dfdb4c1d7f58689ddbc/latest/USD`;
 
 // For selecting different controls
 let search = document.querySelector(".searchBox");
@@ -36,14 +38,17 @@ convert.addEventListener("click", getResults);
 function getResults() {
     fetch(`${api}`)
         .then(currency => {
+            if (!currency.ok) throw new Error(`HTTP error: ${currency.status}`)
+            // console.log(currency.json())
             return currency.json();
         }).then(displayResults);
 }
 
 // Display results after conversion
 function displayResults(currency) {
-    let fromRate = currency.rates[resultFrom];
-    let toRate = currency.rates[resultTo];
+    console.log(currency)
+    let fromRate = currency.conversion_rates[resultFrom];
+    let toRate = currency.conversion_rates[resultTo];
     finalValue.innerHTML =
         ((toRate / fromRate) * searchValue).toFixed(2);
     finalAmount.style.display = "block";
