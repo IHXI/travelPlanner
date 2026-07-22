@@ -20,6 +20,7 @@ const passUserToView = require('./middleware/pass-user-to-view')
 
 const authCtrl = require('./controllers/auth')
 const tripsCtrl = require('./controllers/trips')
+const notesCtrl = require('./controllers/notes')
 const { showNewForm } = require("./models/trip");
 
 // Set the port from environment variable or default to 3000
@@ -90,6 +91,10 @@ app.get('/trips/:tripId/edit', tripsCtrl.editTrip)
 app.put('/trips/:tripId', isSignedIn,upload.single('image'), tripsCtrl.updateTrip)
 app.delete('/trips/:tripId', isSignedIn, upload.single('image'), tripsCtrl.deleteTrip)
 app.get('/trips/:tripId/currency', isSignedIn, tripsCtrl.currencyConverter)
+
+app.post('/trips/:tripId/notes', notesCtrl.create)
+app.delete('/trips/:tripId/notes/:noteId', notesCtrl.deleteNote)
+
 
 
 
