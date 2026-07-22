@@ -16,6 +16,7 @@ const signUp = async (req, res) => {
 
     let userData = {}
     userData.username = req.body.username
+    userData.avatar = req.body.avatar
 
     const hashedPassword = bcrypt.hashSync(req.body.password, 10)
     userData.password = hashedPassword
@@ -24,7 +25,8 @@ const signUp = async (req, res) => {
 
     req.session.user = {
         username: user.username,
-        _id: user._id
+        _id: user._id,
+        avatar: user.avatar
     }
     req.session.save(() => {
         res.redirect('/')
@@ -52,7 +54,8 @@ const signIn = async (req, res) => {
 
     req.session.user = {
         username: userInDatabase.username,
-        _id: userInDatabase._id
+        _id: userInDatabase._id,
+        avatar: userInDatabase.avatar
     }
     req.session.save(() => {
         res.redirect('/')

@@ -2,12 +2,12 @@
     <h1>Trip to <%=trip.city%>, <%=trip.country%></h1>
 
     <div class="trip-info">
-    <h3>Current weather of <%=trip.city%>: <%=Math.ceil(weather.main.temp)%>°C</h2>
-    <h3>feels like: <%=Math.ceil(weather.main.feels_like)%>°C</h2>
-    <h4>From:  <%if(trip.form){%><%=trip.from.toISOString().split("T")[0]%><%}%></h3> 
-    <h4>to: <%if(trip.form){%><%=trip.to.toISOString().split("T")[0]%><%}%></h3>
-    <h4>Budget: <%=trip.budget%></h3>
-    <h4>status: <%=trip.status%></h3>
+    <h3>Current weather of <%=trip.city%>: <%=Math.ceil(weather.main.temp)%>°C</h3>
+    <h3>feels like: <%=Math.ceil(weather.main.feels_like)%>°C</h3>
+    <h4>From:  <%if(trip.from){%><%=trip.from.toISOString().split("T")[0]%><%}%></h4> 
+    <h4>to: <%if(trip.to){%><%=trip.to.toISOString().split("T")[0]%><%}%></h4>
+    <h4>Budget: <%=trip.budget%></h4>
+    <h4>status: <%=trip.status%></h4>
     </div>
     <form action="/trips/<%=trip._id%>/currency">
         <p>Need to check the exchange rate before adding a note?</p>
