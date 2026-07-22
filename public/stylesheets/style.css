@@ -1,37 +1,157 @@
 body{
-    background-color: #CBEEF3;
-    display: flex;
-    flex-direction: column;
-    min-width: 100dvw;
-    align-items: center;
-}
-.trip-info {
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 10px;
-}
-
-.buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    min-width: 100dvw;
-    
-}
-.buttons button{
-    border: 2px solid #880D1E;
-    border-radius: 20px;
-    background-color: #ffffff;
-}
-nav{
-    min-width: 100dvw;
-    margin-bottom: 30px; 
+    margin:0;
+    padding:40px;
+    background:#CBEEF3;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#2c2c2c;
 }
 
 h1{
-    color: #880D1E;
+    text-align:center;
+    color:#880D1E;
+    margin-bottom:30px;
 }
 
-.navbar, navbar-expand-lg{
-    background-color: #880D1E;
+
+.trip-info{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.trip-info h3,
+.trip-info h4{
+    margin:15px 0;
+}
+
+
+body > form{
+    text-align:center;
+    margin:30px auto;
+}
+
+body > form p{
+    color:#880D1E;
+    font-weight:bold;
+}
+
+/* ---------- Buttons ---------- */
+
+button{
+    background:#880D1E;
+    color:white;
+    border:none;
+    padding:12px 24px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#DD2D4A;
+    transform:translateY(-2px);
+}
+
+/* ---------- Notes ---------- */
+
+.notes{
+    max-width:700px;
+    margin:40px auto;
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.notes h2{
+    color:#880D1E;
+    text-align:center;
+}
+
+textarea{
+    width:100%;
+    padding:15px;
+    border:2px solid #F49CBB;
+    border-radius:10px;
+    resize:vertical;
+    margin-bottom:20px;
+    font-size:15px;
+}
+
+textarea:focus{
+    outline:none;
+    border-color:#DD2D4A;
+}
+
+/* ---------- Individual Note ---------- */
+
+#notes{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+
+    background:#F49CBB;
+    border-left:6px solid #DD2D4A;
+    padding:15px;
+    margin-top:20px;
+    border-radius:10px;
+}
+
+#notes p{
+    flex:1;
+    margin:0;
+}
+
+/* Delete button */
+
+#notes button{
+    background:#DD2D4A;
+}
+
+#notes button:hover{
+    background:#880D1E;
+}
+
+/* ---------- Bottom Buttons ---------- */
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:40px;
+}
+
+.buttons form{
+    display:inline;
+}
+
+.buttons button{
+    min-width:140px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:700px){
+
+    body{
+        padding:20px;
+    }
+
+    #notes{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .buttons button{
+        width:100%;
+    }
 }
