@@ -1,19 +1,22 @@
 <%- include('../partials/nav') %>
 
     <h1>trip</h1>
-    <a href="/trips/new">+ New Trip</a>
-    
+    <form action="/trips/new">
+        <button>+ New Trip</button>
+    </form>
+
+    <div class="trip-info">
     <%allTrips.forEach((item)=>{%>
         <ul>
             <li>
                 <a href="/trips/<%=item._id%>">
                 <%=item.country%></a>
-                <img src="<%=item.image.url%>" alt="" width="100">
+                <img src="<%=item.image.url%>" alt="" width="250">
             </li>
         </ul>
     
     <%})%>
-
+</div>
     
 </body>
 </html>

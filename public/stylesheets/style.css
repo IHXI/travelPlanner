@@ -1,15 +1,44 @@
 body{
     margin:0;
-    padding:40px;
-    background:#CBEEF3;
+    background:#daeff2;
     font-family:Arial, Helvetica, sans-serif;
     color:#2c2c2c;
 }
 
+.navbar{
+    background:#880D1E;
+    padding:15px 40px;
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+    
+}
+
+.navbar-brand{
+    color: white !important;
+    font-weight:bold;
+    font-size:22px;
+}
+
+
+.nav-link{
+    color:white ;
+    font-weight:500;
+    margin-right:10px;
+    transition:.3s;
+}
+
+
+.navbar-toggler{
+    border-color:white;
+}
+
+
 h1{
+    padding-top: 40px;
     text-align:center;
     color:#880D1E;
     margin-bottom:30px;
+    font-weight: bolder;
+    font-size: 50px;
 }
 
 
@@ -38,8 +67,6 @@ body > form p{
     font-weight:bold;
 }
 
-/* ---------- Buttons ---------- */
-
 button{
     background:#880D1E;
     color:white;
@@ -55,8 +82,6 @@ button:hover{
     background:#DD2D4A;
     transform:translateY(-2px);
 }
-
-/* ---------- Notes ---------- */
 
 .notes{
     max-width:700px;
@@ -87,8 +112,6 @@ textarea:focus{
     border-color:#DD2D4A;
 }
 
-/* ---------- Individual Note ---------- */
-
 #notes{
     display:flex;
     justify-content:space-between;
@@ -107,7 +130,7 @@ textarea:focus{
     margin:0;
 }
 
-/* Delete button */
+
 
 #notes button{
     background:#DD2D4A;
@@ -117,7 +140,7 @@ textarea:focus{
     background:#880D1E;
 }
 
-/* ---------- Bottom Buttons ---------- */
+
 
 .buttons{
     display:flex;
@@ -134,24 +157,20 @@ textarea:focus{
     min-width:140px;
 }
 
-/* ---------- Responsive ---------- */
+li{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style:none;
+    padding:10px;
+    margin:0;
 
-@media(max-width:700px){
+}
 
-    body{
-        padding:20px;
-    }
-
-    #notes{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .buttons{
-        flex-direction:column;
-    }
-
-    .buttons button{
-        width:100%;
-    }
+li a{
+    text-decoration: none;
+    color: #DD2D4A;
+    font-weight: bold;
 }
